@@ -3,12 +3,12 @@ Dynamic View Creator library allows to create Android views based on the provide
 
 Example of usage:<br>
 <code>
-  // POJO class
-  class User(val firstName: String, val lastName: String)
+  // POJO class<br>
+  class User(val firstName: String, val lastName: String)<br>
 
-  // in MainActivity
-  val user = User("John", "Smith")
+  // in MainActivity<br>
+  val user = User("John", "Smith")<br>
   
-  val creator = ViewCreator(this)
+  val creator = ViewCreator(this)<br>
   val view = creator.create(user)
 </code>
