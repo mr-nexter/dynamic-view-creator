@@ -17,3 +17,12 @@ fun Context.spToPx(sp: Float): Float {
         TypedValue.COMPLEX_UNIT_SP,
         sp, this.resources.displayMetrics)
 }
+
+fun String.toPropertyTitle(): String {
+    val text = this.replace("\\d+".toRegex(), "")
+    val list = text.split("(?=[A-Z])".toRegex()).toMutableList()
+    return if (list.isNotEmpty()) {
+        list[0] = list[0].replaceFirstChar { it.uppercase() }
+        list.joinToString(" ", "", ":")
+    } else this
+}

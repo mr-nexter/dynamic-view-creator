@@ -12,6 +12,8 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+        val name = "javaScript123"
+        val expected = "Java Script:"
+        assertEquals(expected, name.toPropertyTitle())
     }
 }

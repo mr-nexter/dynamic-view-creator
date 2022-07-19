@@ -27,9 +27,9 @@ import java.util.logging.Logger
  */
 class ViewCreator(
         val context: Context,
-        val viewGroup: ViewGroup?,
-        val layoutParams: ViewGroup.LayoutParams? = null,
-        var standardMargin: Int = 16
+        var standardMargin: Int = 16,
+        val viewGroup: ViewGroup? = null,
+        val layoutParams: ViewGroup.LayoutParams? = null
 ) {
     private val layout = viewGroup ?: LinearLayout(context)
     private val params = layoutParams?: layout.layoutParams
