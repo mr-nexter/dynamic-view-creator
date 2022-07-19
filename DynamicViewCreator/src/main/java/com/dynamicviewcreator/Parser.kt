@@ -27,15 +27,7 @@ class Parser(private val context: Context,
      * @param obj POJO object, usually a database model object
      * @return Created [View] based on the provided POJO object
      */
-    fun <T: Any> parse(obj: T): View {
-        val params = LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
-        val px = context.dpToPx(20)
-        val layout = LinearLayoutCompat(context)
-        layout.layoutParams = params
-        layout.setPadding(px)
-
-        var gridView: RecyclerView? = null
-        // TODO: here you should add a RecyclerView
+    fun <T: Any> parse(obj: T): View? {
 
         for (field in obj.javaClass.declaredFields) {
             field.isAccessible = true
@@ -70,7 +62,9 @@ class Parser(private val context: Context,
                 Log.e(tag, "Cannot parse $field of $obj")
             }
         }
-        return layout
+
+        // TODO: update
+        return null
     }
 
     private fun createCollectionRepresentation(name: String, value: Collection<*>) {
